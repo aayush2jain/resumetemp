@@ -1,47 +1,78 @@
-export default function Blog(){
-    const data = [
-        {
-            title: "Understanding React Hooks",
-            date: "2023-10-01",
-            content: "React Hooks are functions that let you use state and other React features without writing a class. They were introduced in React 16.8 and have since become a fundamental part of React development.",
-            link: "https://example.com/react-hooks"
-        },
-        {
-            title: "A Guide to CSS Grid Layout",
-            date: "2023-09-15",
-            content: "CSS Grid Layout is a powerful layout system that allows you to create complex web layouts with ease. It provides a two-dimensional grid-based layout system, making it easier to design responsive web pages.",
-            link: "https://example.com/css-grid"
-        },
-        {
-            title: "JavaScript ES6 Features You Should Know",
-            date: "2023-08-20",
-            content: "ES6 (ECMAScript 2015) introduced many new features to JavaScript, including arrow functions, classes, template literals, and destructuring. These features make JavaScript more powerful and easier to work with.",
-            link: "https://example.com/es6-features"
-        }
-    ];
-    return(
-        <>
-            <div className=" rounded-3xl text-white/90 bg-neutral-900">
-                  <h1 className="text-3xl font-[700] mb-[4vh] p-1 underline-offset-16 underline decoration-[2px]  decoration-yellow-500">Blogs</h1>
+export default function Blog() {
+  const data = [
+    {
+      title: "Journey Of Portigo: From Concept To Creation",
+      date: "2026-10-01",
+      content:
+        "You have 30 seconds to explain your startup idea—this was the moment that shaped how I define Portigo and the problem it solves.",
+      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_portigo-startupjourney-entrepreneurship-activity-7398423210373066752-b9ME",
+      image: "portigoblog.png",
+    },
+    {
+      title: "My Journey in E-Cell",
+      date: "2025-02-20",
+      content:
+        "Why work for free? Because sometimes the experience, learning, and impact outweigh immediate rewards—this is what E-Cell taught me.",
+      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_ecelldtu-webdevelopment-leadership-activity-7336111850985533441-o_r1",
+      image: "ecellpost.jpeg",
+    },
+    {
+      title: "Project vs Product: What’s the Real Difference?",
+      date: "2025-09-15",
+      content:
+        "A project ends, but a product evolves. Understanding this difference is key to building something that truly delivers long-term value.",
+      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_productmanagement-projectmanagement-freelancing-activity-7370027163615440897-v-pn",
+      image: "gnc.png",
+    },
+  ];
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
-                    {data.map((post, index) => (
-                        <div key={index} className="group w-full border  bg-gradient-to-br from-neutral-800 to-neutral-900  border-neutral-700 pb-2 rounded-3xl">
-                            <div className="w-full  relative">
-                            <img className="rounded-3xl p-2 object-cover transition-all ease-in-out duration-200 group-hover:scale-110 w-full h-full" src='blog-1.jpg'></img>
-                            </div>
-                            <div className="p-5">
-    
-                            <h2 className="text-xl font-bold group-hover:text-yellow-400">{post.title}</h2>
-                             <p className="text-gray-400 items-end flex flex-col   text-sm mb-1">
-                                <p>{new Date(post.date).toLocaleDateString()}</p></p>
-                            <p className="text-gray-300 mb-2">{post.content}...</p>
-                            <a href={post.link} target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300">Read more</a>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+  return (
+    <div className="rounded-3xl text-white/90 bg-neutral-900">
+      <h1 className="text-3xl font-[700] mb-[4vh] p-1 underline-offset-16 underline decoration-[2px] decoration-yellow-500">
+        Blogs
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {data.map((post, index) => (
+          <div
+            key={index}
+            className="group w-full border bg-gradient-to-br from-neutral-800 to-neutral-900 border-neutral-700 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(250,204,21,0.1)]"
+          >
+            {/* Image */}
+            <div className="w-full overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-[40vh] object-cover transition-transform duration-500 group-hover:scale-110"
+              />
             </div>
-        </>
-    )
+
+            {/* Content */}
+            <div className="p-5">
+              <h2 className="text-xl font-bold group-hover:text-yellow-400 transition-colors duration-300">
+                {post.title}
+              </h2>
+
+              <p className="text-gray-400 text-sm mt-1">
+                {new Date(post.date).toLocaleDateString()}
+              </p>
+
+              <p className="text-gray-300 mt-3 text-sm leading-relaxed line-clamp-3">
+                {post.content}
+              </p>
+
+              <a
+                href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 mt-4 inline-block hover:text-yellow-300"
+              >
+                Read more →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

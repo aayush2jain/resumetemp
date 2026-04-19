@@ -1,69 +1,117 @@
 export default function Project() {
-    const data = [
-        {
-        title: "Portfolio Website",
-        year: "2023",
-        description: "A personal portfolio website showcasing my projects and skills.",
-        link: "https://myportfolio.com",
-        },
-        {
-        title: "E-commerce Platform",
-        year: "2022",
-        description: "An e-commerce platform built with React and Node.js.",
-        link: "https://ecommerceplatform.com",
-        },
-        {
-        title: "Blog Application",
-        year: "2021",
-        description: "A blog application with user authentication and CRUD operations.",
-        link: "https://myblogapp.com",
-        },
-    ];
+  const data = [
+    {
+      title: "Portfolio Creator",
+      year: "2025",
+      description:
+        "A no-code SaaS platform enabling users to create and deploy personal portfolio websites using customizable templates, with secure authentication and scalable backend.",
+      tech: "React, Next.js, Node.js, SQL",
+      link: "https://myportfolio-phi-snowy-32.vercel.app",
+      image: "portfolio.png",
+    },
+    {
+      title: "E-Cell DTU Website",
+      year: "2024",
+      description:
+        "Redesigned and developed the official E-Cell website to handle 500+ registrations, 1,000+ visitors, and ₹10K+ in transactions with improved performance and UX.",
+      tech: "React, Node.js, MongoDB",
+      link: "https://www.ecelldtu.in/",
+      image: "ecell.png",
+    },
+    {
+      title: "Misthan (E-commerce)",
+      year: "2024",
+      description:
+        "A fully responsive e-commerce platform for sweets and snacks with integrated Razorpay payments and a mobile-first user experience.",
+      tech: "React, Node.js, Razorpay",
+      link: "https://misthan-five.vercel.app/",
+      image: "misthan.png",
+    },
+    {
+      title: "VideoTube",
+      year: "2023",
+      description:
+        "A video-sharing platform with authentication, CRUD functionality, and dynamic content rendering, inspired by modern streaming applications.",
+      tech: "React, Node.js, Express",
+      link: "https://frontend-three-pi-10.vercel.app/",
+      image: "videotube.png",
+    },
+    {
+      title: "E-commerce Frontend",
+      year: "2024",
+      description:
+        "A modern e-commerce frontend built with reusable components, optimized UI, and responsive design using Tailwind CSS.",
+      tech: "React, Tailwind CSS",
+      link: "https://ecommerce-murex-one-29.vercel.app",
+      image: 'vogueish.png',
+    },
+  ];
+
+  return (
+    <section className="px-6 md:px-0 relative">
+      <h1 className="text-3xl font-[700] mb-[6vh] p-1 underline-offset-16 underline decoration-[2px] decoration-yellow-500">
+        Projects
+      </h1>
+
+      {data.map((item, idx) => (
+        <div
+  key={idx}
+  className={`flex flex-col md:flex-row gap-6 group ml-2 
+  transition-all duration-300 ease-out 
+  hover:scale-[1.03] hover:shadow-2xl hover:shadow-yellow-500/10 
+  hover:border hover:border-yellow-400/20 rounded-2xl p-3
+  ${
+    idx !== data.length - 1
+      ? "border-b border-neutral-800 pb-6 mb-6"
+      : ""
+  }`}
+>
+          {/* Image */}
+          <div className="relative w-full md:w-[40%] overflow-hidden rounded-2xl">
+  <a href={item.link} target="_blank" rel="noopener noreferrer">
     
-    return (
-       <section className="px-6 md:px-0 relative">
-  <h1 className="text-3xl font-[700] mb-[6vh] p-1  underline-offset-16 underline decoration-[2px]  decoration-yellow-500 ">Projects</h1>
+    <img
+      src={item.image}
+      alt={item.title}
+      className="rounded-2xl w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+    />
 
-{data.map((item, idx) => (
-  <div
-    key={idx}
-    className={`flex flex-col ml-2 md:flex-row gap-6 group  ${
-      idx !== data.length - 1 ? 'border-b border-neutral-700 pb-4 mb-4' : ''
-    }`}
-  >
-    {/* Image */}
-    <div className="w-full md:w-[40%] group-hover:border-1 border-yellow-400 rounded-2xl  overflow-hidden">
-      <img
-        className="rounded-2xl w-full h-full object-cover shadow-md"
-        src={'blog-1.jpg'}
-        alt={item.title}
-      />
+    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+      <span className="text-white text-sm border border-white px-3 py-1 rounded-lg">
+        View Project ↗
+      </span>
     </div>
 
-    {/* Text */}
-    <div className="flex flex-col justify-center w-full">
-      <h3 className="text-2xl transition-colors duration-400 ease-in-out font-semibold text-white group-hover:text-yellow-400 mb-1">
-        {item.title}
-      </h3>
-      <p className="text-sm text-gray-400">React, Node.js, Express</p>
-      <p className="text-gray-300 mt-2">
-        {item.description} 
-      </p>
-      {item.link && (
-        <a
-          href={item.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-yellow-400 hover:underline mt-3 inline-block transition-colors duration-200 ease-in-out"
-        >
-         View Project
-        </a>
-      )}
-    </div>
-  </div>
-))}
+  </a>
+</div>
 
-</section>
+          {/* Text */}
+          <div className="flex flex-col justify-center w-full">
+            <h3 className="text-2xl font-semibold text-white group-hover:text-yellow-400 transition-colors duration-300">
+              {item.title}
+            </h3>
 
-    );
+            <p className="text-sm text-yellow-400 mt-1">{item.year}</p>
+
+            <p className="text-sm text-gray-400 mt-1">{item.tech}</p>
+
+            <p className="text-gray-300 mt-3 leading-relaxed">
+              {item.description}
+            </p>
+
+            {item.link && (
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 mt-4 inline-block transition-all duration-300 hover:underline"
+              >
+                View Project →
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </section>
+  );
 }

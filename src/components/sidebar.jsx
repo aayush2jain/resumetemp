@@ -16,17 +16,33 @@ export default function Sidebar() {
       <div className="flex flex-col items-center rounded-2xl border border-neutral-700 mb-2 mt-8 bg-neutral-800/50">
         {/* Avatar & Name */}
         <div className="flex w-full flex-row md:flex-col items-center ml-[20%] md:ml-0 pt-6 mx-auto gap-6 md:gap-0">
-          <div className="w-[120px] h-[120px] flex items-center justify-center bg-neutral-700 rounded-3xl">
-            <img
-              src="my-avatar.png"
-              alt="Profile"
-              className="object-cover w-full h-full rounded-3xl"
-            />
-          </div>
+          <div className="w-[120px] h-[120px] [perspective:1000px]">
+  <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]">
+    
+    {/* Front Image */}
+    <div className="absolute w-full h-full [backface-visibility:hidden]">
+      <img
+        src="me.jpg"
+        alt="Front"
+        className="w-full h-full object-cover rounded-3xl"
+      />
+    </div>
+
+    {/* Back Image */}
+    <div className="absolute w-full h-full [transform:rotateY(180deg)] [backface-visibility:hidden]">
+      <img
+        src="my-avatar.png"
+        alt="Back"
+        className="w-full h-full object-cover rounded-3xl"
+      />
+    </div>
+
+  </div>
+</div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold mt-2">John Doe</h2>
+            <h2 className="text-2xl font-bold mt-2">Aayush Jain</h2>
             <p className="text-xs mt-3 px-3 py-1 border rounded-lg inline-block">
-              Web Developer
+             Web Developer
             </p>
           </div>
         </div>
@@ -46,19 +62,23 @@ export default function Sidebar() {
               {
                 icon: phonePortraitOutline,
                 label: "PHONE",
-                value: "+91 1234567890",
-                link: "tel:+911234567890",
+                value: "+91 8696213068",
+                link: "tel:+918696213068",
               },
               {
                 icon: locationOutline,
                 label: "LOCATION",
-                value: "City, Country",
+                value: "Delhi,India",
               },
             ].map((item, index) => (
-              <div key={index} className="flex items-center mb-4">
-                <div className="flex items-center justify-center w-8 h-8 bg-neutral-700 rounded-lg">
-                  <IonIcon icon={item.icon} className="text-yellow-400 text-xl" />
-                </div>
+              <div key={index} className="flex group items-center mb-4">
+                <div className="flex items-center justify-center w-8 h-8 bg-neutral-700 rounded-lg 
+                transition-all duration-300 group-hover:shadow-[0_0_12px_#facc15] group-hover:scale-110 cursor-pointer">
+  <IonIcon 
+    icon={item.icon} 
+    className="text-yellow-400 text-xl transition-all duration-300" 
+  />
+</div>
                 <div className="ml-4 text-sm">
                   <p className="text-neutral-400 text-xs">{item.label}</p>
                   {item.link ? (
@@ -78,7 +98,7 @@ export default function Sidebar() {
        
 
         {/* Toggle only on small screens */}
-        <div className="md:hidden w-full px-[17%]">
+        <div className="md:hidden w-full px-[7%]">
           {active ? (
             <div
               className="flex items-center  justify-center w-full my-6 h-px bg-yellow-400 cursor-pointer"
