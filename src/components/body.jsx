@@ -9,7 +9,7 @@ export default function Body() {
     const [page, setPage] = useState('about');
     return(
         <>
-            <div className="w-full font-sans h-[98vh] relative overflow-y-auto mr-[4vw] my-[1vh] rounded-3xl md:w-3/4 p-6 text-white/90 bg-neutral-900 pb-[8vh] md:pb-0">
+            <div className="w-full font-sans h-[98vh] relative overflow-y-auto mr-[4vw] my-[1vh] rounded-3xl md:w-3/4 p-6 text-white/90 bg-neutral-900/70 pb-[8vh] md:pb-0">
        <nav className="bg-neutral-800/70 w-full md:w-auto fixed bottom-0 left-0 md:left-auto md:bottom-auto md:top-[1vh] md:right-[6vw] z-50 
                 rounded-t-3xl md:rounded-t-none md:rounded-tr-3xl md:rounded-bl-3xl 
                 px-[8vw] md:px-[4vw] text-white p-4 border-t md:border md:border-l-0 border-neutral-700">
