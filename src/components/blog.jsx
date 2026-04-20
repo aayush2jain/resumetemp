@@ -68,7 +68,7 @@ export default function Blog() {
       content:
         "You have 30 seconds to explain your startup idea—this was the moment that shaped how I define Portigo and the problem it solves.",
       link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_portigo-startupjourney-entrepreneurship-activity-7398423210373066752-b9ME",
-      image: "portigoblog.png",
+      image: "portigoblog.webp",
     },
     {
       title: "My Journey in E-Cell",
@@ -76,7 +76,7 @@ export default function Blog() {
       content:
         "Why work for free? Because sometimes the experience, learning, and impact outweigh immediate rewards—this is what E-Cell taught me.",
       link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_ecelldtu-webdevelopment-leadership-activity-7336111850985533441-o_r1",
-      image: "ecellpost.jpeg",
+      image: "ecellpost.webp",
     },
     {
       title: "Project vs Product: What’s the Real Difference?",
@@ -84,7 +84,7 @@ export default function Blog() {
       content:
         "A project ends, but a product evolves. Understanding this difference is key to building something that truly delivers long-term value.",
       link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_productmanagement-projectmanagement-freelancing-activity-7370027163615440897-v-pn",
-      image: "gnc.png",
+      image: "gnc.webp",
     },
   ];
 

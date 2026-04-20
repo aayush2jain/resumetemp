@@ -68,61 +68,80 @@ const experienceData = [
 
   return (
     <>
-    <section className="px-6  md:px-0 relative">
-      <h1 className="text-3xl font-[700] mb-[4vh] p-1 underline-offset-16 underline decoration-[2px]  decoration-yellow-500">Resume</h1>
-      <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-        <span className="text-yellow-400 mr-4 text-xl p-3 border-l-[1px] border-t-[1px] border-neutral-700 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-xl ml-1.5">
+  <div className="sm:px-6 md:px-0 max-w-4xl mx-auto">
+
+    {/* Resume Heading */}
+    <h1 className="text-2xl sm:text-3xl font-bold mb-6 underline underline-offset-8 decoration-yellow-500">
+      Resume
+    </h1>
+
+    {/* Experience */}
+    <section className="mb-10">
+      <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+        <span className="text-yellow-400 text-lg p-2 border border-neutral-700 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-lg">
           <TfiBook />
-        </span>{" "}
+        </span>
         Experience
       </h2>
-      <div className="ml-7">
-       {experienceData.map((item, idx) => (
-  <TimelineItem
-    key={idx}
-    {...item}
-    isLast={idx === data.length - 1}
-  />
-))}
+
+      <div className="space-y-6">
+        {experienceData.map((item, idx) => (
+          <TimelineItem
+            key={idx}
+            {...item}
+            isLast={idx === experienceData.length - 1}
+          />
+        ))}
       </div>
     </section>
-    <section className="px-6 md:py-6 md:px-0 relative mt-[4vh] md:mt-0">
-      <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-        <span className="text-yellow-400 mr-4 text-xl p-3 border-l-[1px] border-t-[1px] border-neutral-700 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-xl ml-1.5">
+
+    {/* Education */}
+    <section className="mb-10">
+      <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
+        <span className="text-yellow-400 text-lg p-2 border border-neutral-700 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-lg">
           <MdOutlineWorkHistory />
-        </span>{" "}
+        </span>
         Education
       </h2>
-      <div className="ml-7">
-       {data.map((item, idx) => (
-  <TimelineItem
-    key={idx}
-    {...item}
-    isLast={idx === data.length - 1}
-  />
-))}
+
+      <div className="space-y-6">
+        {data.map((item, idx) => (
+          <TimelineItem
+            key={idx}
+            {...item}
+            isLast={idx === data.length - 1}
+          />
+        ))}
       </div>
     </section>
-    <div>
-        <h1 className="text-2xl m-2 font-bold text-white mt-[4vh] md:mt-0 ">My Skills</h1>
-     <div className=" p-6 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl shadow-lg">
-      {skills.map((skill, index) => (
-        <div key={index} className="mb-5 ">
-          <div className="flex justify-between text-white mb-2">
-            <span className="font-semibold">{skill.name}</span>
-            <span>{skill.percent}%</span>
+
+    {/* Skills */}
+    <section >
+      <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+        My Skills
+      </h2>
+
+      <div className="p-4 sm:p-6 bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-2xl shadow-lg">
+        {skills.map((skill, index) => (
+          <div key={index} className="mb-5">
+            <div className="flex justify-between text-sm sm:text-base text-white mb-2">
+              <span className="font-semibold">{skill.name}</span>
+              <span>{skill.percent}%</span>
+            </div>
+
+            <div className="w-full bg-[#2e2e2e] h-2 rounded-full overflow-hidden">
+              <div
+                className="h-2 rounded-full bg-yellow-400 transition-all duration-500"
+                style={{ width: `${skill.percent}%` }}
+              ></div>
+            </div>
           </div>
-          <div className="w-full bg-[#2e2e2e] h-2 rounded-full">
-            <div
-              className="h-2 rounded-full bg-yellow-400"
-              style={{ width: `${skill.percent}%` }}
-            ></div>
-          </div>
-        </div>
-      ))}
-    </div>
-    </div>
-    </>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</>
   );
 }
 
