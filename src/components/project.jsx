@@ -69,13 +69,24 @@ export default function Project() {
           {/* Image */}
           <div className="relative w-full md:w-[40%] overflow-hidden rounded-2xl">
   <a href={item.link} target="_blank" rel="noopener noreferrer">
-    
+
+    {/* Blur background */}
+    <img
+      src={item.image}
+      alt=""
+      className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-40"
+    />
+
+    {/* Actual image */}
     <img
       src={item.image}
       alt={item.title}
-      className="rounded-2xl w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+      decoding="async"
+      className="relative rounded-2xl w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
     />
 
+    {/* Overlay */}
     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
       <span className="text-white text-sm border border-white px-3 py-1 rounded-lg">
         View Project ↗

@@ -47,7 +47,7 @@ export default function Contact() {
         Contact Me
       </h1>
 
-      <div className="flex flex-col items-center justify-center mt-4 bg-neutral-900 text-white px-4 py-2">
+      <div className="flex flex-col items-center justify-center mt-4 bg-neutral-950/70 text-white px-4 py-2">
         <p className="text-lg my-4 text-center text-gray-300">
           Would love to hear from you!
         </p>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 function BlogCard({ post }) {
   const [loaded, setLoaded] = useState(false);
 
@@ -55,49 +54,6 @@ function BlogCard({ post }) {
         >
           Read more →
         </a>
-      </div>
-    </div>
-  );
-}
-
-export default function Blog() {
-  const data = [
-    {
-      title: "Journey Of Portigo: From Concept To Creation",
-      date: "2026-10-01",
-      content:
-        "You have 30 seconds to explain your startup idea—this was the moment that shaped how I define Portigo and the problem it solves.",
-      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_portigo-startupjourney-entrepreneurship-activity-7398423210373066752-b9ME",
-      image: "portigoblog.png",
-    },
-    {
-      title: "My Journey in E-Cell",
-      date: "2025-02-20",
-      content:
-        "Why work for free? Because sometimes the experience, learning, and impact outweigh immediate rewards—this is what E-Cell taught me.",
-      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_ecelldtu-webdevelopment-leadership-activity-7336111850985533441-o_r1",
-      image: "ecellpost.jpeg",
-    },
-    {
-      title: "Project vs Product: What’s the Real Difference?",
-      date: "2025-09-15",
-      content:
-        "A project ends, but a product evolves. Understanding this difference is key to building something that truly delivers long-term value.",
-      link: "https://www.linkedin.com/posts/aayush-jain-8a4982279_productmanagement-projectmanagement-freelancing-activity-7370027163615440897-v-pn",
-      image: "gnc.png",
-    },
-  ];
-
-  return (
-    <div className="rounded-3xl text-white/90 ">
-      <h1 className="text-3xl font-[700] mb-[4vh] p-1 underline-offset-16 underline decoration-[2px] decoration-yellow-500">
-        Blogs
-      </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {data.map((post, index) => (
-          <BlogCard key={index} post={post} />
-        ))}
       </div>
     </div>
   );
